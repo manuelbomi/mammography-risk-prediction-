@@ -246,9 +246,9 @@ mammography-risk-prediction/
 ```bibtex
 @software{mammo_risk_prediction,
   title={Deep Learning Pipeline for Breast Cancer Risk Prediction Using Mammography Images},
-  author={Manuel},
-  year={2026},
-  url={https://github.com/yourusername/mammography-risk-prediction}
+  author={Emmanuel Oyekanlu},
+  year={2019},
+  url={https://github.com/manuelbomi/mammography-risk-prediction}
 }
 ```
 
@@ -259,3 +259,25 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 ---
 
 **Disclaimer**: This software is intended for research purposes only and has not been cleared or approved by any regulatory authority for clinical use. It should not be used as a substitute for professional medical advice, diagnosis, or treatment.
+
+### Thank you for reading
+---
+
+### **AUTHOR'S BACKGROUND**
+### Author's Name:  Emmanuel Oyekanlu
+```
+Skillset:   I have experience spanning several years in data science, developing scalable enterprise data pipelines,
+enterprise solution architecture, architecting enterprise systems data and AI applications,
+software and AI solution design and deployments, data engineering, AI & Data Engineering for healthcare application, high performance computing (GPU, CUDA), machine learning,
+NLP, Agentic-AI and LLM applications as well as deploying scalable solutions (apps) on-prem and in the cloud.
+
+I can be reached through: manuelbomi@yahoo.com
+
+Website:  http://emmanueloyekanlu.com/
+Publications:  https://scholar.google.com/citations?user=S-jTMfkAAAAJ&hl=en
+LinkedIn:  https://www.linkedin.com/in/emmanuel-oyekanlu-6ba98616
+Github:  https://github.com/manuelbomi
+
+```
+[![Icons](https://skillicons.dev/icons?i=aws,azure,gcp,scala,mongodb,redis,cassandra,kafka,anaconda,matlab,nodejs,django,py,c,anaconda,git,github,mysql,docker,kubernetes&theme=dark)](https://skillicons.dev)
+
