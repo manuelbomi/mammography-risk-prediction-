@@ -1,0 +1,73 @@
+# Mammography Risk Prediction - Default Training Configuration
+# ============================================================
+# This configuration is tuned for training on a single GPU (A100 40GB)
+# with a typical institutional mammography dataset (~10-50k exams).
+
+data:
+  data_dir: "data/raw"
+  labels_csv: "data/labels.csv"
+  target_size: [2048, 1024]
+  views: ["CC", "MLO"]
+  clahe_clip_limit: 2.0
+  clahe_tile_size: 8
+  normalize_laterality: true
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  num_workers: 4
+  pin_memory: true
+
+augmentation:
+  enabled: true
+  rotation_range: 5.0
+  scale_range: [0.95, 1.05]
+  translate_range: 0.02
+  intensity_shift_range: 0.05
+  gaussian_noise_std: 0.01
+  horizontal_flip_prob: 0.0      # Disabled: laterality is normalized
+  random_crop_pad: 20
+
+model:
+  backbone: "efficientnet_b5"
+  num_density_classes: 4           # BI-RADS A, B, C, D
+  dropout_rate: 0.3
+  use_attention: true
+  attention_type: "cbam"           # Options: cbam, multi_scale, gated
+  pretrained: true
+  freeze_backbone_epochs: 3        # Freeze backbone for first 3 epochs
+  input_channels: 1                # Grayscale mammograms
+
+training:
+  num_epochs: 50
+  batch_size: 8
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  backbone_lr_factor: 0.1         # Backbone LR = base_lr * 0.1
+  max_grad_norm: 1.0
+  gradient_accumulation_steps: 4   # Effective batch size = 32
+
+  # Learning rate schedule
+  warmup_epochs: 5
+  lr_scheduler: "cosine"
+
+  # Loss function
+  loss_type: "focal"
+  focal_alpha: 0.75               # Weight for positive class
+  focal_gamma: 2.0                # Focusing parameter
+  risk_loss_weight: 1.0
+  density_loss_weight: 0.3        # Auxiliary task weight
+  label_smoothing: 0.1
+  use_uncertainty_weighting: false
+
+  # Mixed precision
+  use_amp: true
+
+  # Early stopping
+  early_stopping_patience: 10
+
+  # Checkpointing
+  checkpoint_interval: 10
+  output_dir: "experiments/default"
+
+  # Reproducibility
+  seed: 42

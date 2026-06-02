@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (large files)
+data/
+*.dcm
+*.DCM
+*.dicom
+
+# Model checkpoints
+experiments/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Outputs
+results/
+reports/
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+wandb/
+runs/
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Type checking
+.mypy_cache/
+
+# Distribution
+*.tar.gz
+*.whl
