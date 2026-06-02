@@ -71,7 +71,7 @@ graph TD
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/mammography-risk-prediction.git
+git clone https://github.com/manuelbomi/mammography-risk-prediction.git
 cd mammography-risk-prediction
 
 # Create virtual environment
